@@ -20,6 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: make install
+      
+      - name: Check formatting
+        run: python -m black --check src tests
+
+      - name: Run lint
+        run: make lint
 
       - name: Run tests
         run: make test
